@@ -1,14 +1,14 @@
 import React from 'react'
 import CommentList from './comments/CommentList'
 
-const Post = ({post})=>{
+const Post = ({title, subject, author, date_post, comments})=>{
 
     return(
         <div className="post">
-            <h3>{post.title}</h3>
-            <p>{ post.subject }</p>
-            <p>created by {post.author}  <small>{post.date_post}</small></p>
-            <CommentList comments={post.comments}/>
+            <h3>{title}</h3>
+            <p>{ subject }</p>
+            <p>created by {author}  <small>{date_post}</small></p>
+            <CommentList comments={comments}/>
         </div>
     )
 }

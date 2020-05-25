@@ -1,16 +1,14 @@
 import React from 'react'
 import Comment from './Comment'
 
-const CommentList = (comments)=>{
+const CommentList = ({comments})=>{
     return(
-        <ul>
-        {comments.map((comment)=>
-            <li><Comment comment={comment}/></li>
-        )}
-        </ul>
-    )
-    
-    
+        <div className="commentslist">
+            {comments.map((comment,i) =>
+            <p key={i}><Comment {...comment}/></p>
+            )}
+        </div>  
+    )  
 }
 
 export default CommentList

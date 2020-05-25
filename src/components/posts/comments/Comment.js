@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Comment = ({comment})=>{
+const Comment = ({user, date_comment, comment})=>{
     return(
         <div className="comment">
-            <p>{comment.comment}</p>
-            <p>commented by {comment.user} <small>{comment.date_comment}</small></p>
+            <p>{comment}</p>
+            <p>commented by {user} <small>{date_comment}</small></p>
         </div>
     )
 }

@@ -4,13 +4,11 @@ import Post from './Post'
 const PostList = ({posts})=>{
 
     return(
-        <ul>
+        <div className="postlist">
             {posts.map((post)=>
-            <li key={post.id}>
-            <Post post={post}/>
-            </li>
+            <p ><Post {...post}/></p>
             )}
-        </ul>
+        </div>
     )
 }
 
