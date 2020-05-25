@@ -1,13 +1,17 @@
-import React from 'react';
+import React,{Fragment} from 'react';
+import {Provider} from 'react-redux'
 import PostList from './posts/PostList'
+import Header from './layout/Header';
 import '../App.css'
 
 
 
-//const posts = post.concat([post])
 const App = ({ posts })=> {
   return(
-    <PostList posts={posts}/>
+      <Fragment>
+        <Header/>
+        <PostList posts={posts}/>
+      </Fragment>
   )
 }
 
