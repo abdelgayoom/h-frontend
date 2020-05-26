@@ -6,7 +6,7 @@ import posts from './components/data'
 
 ReactDOM.render(
 
- <App posts={posts}/>
+ <App />
 
   ,document.getElementById('root')
 );

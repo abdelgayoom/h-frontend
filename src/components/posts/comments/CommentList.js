@@ -5,7 +5,7 @@ const CommentList = ({comments})=>{
     return(
         <div className="commentslist">
             {comments.map((comment,i) =>
-            <p key={i}><Comment {...comment}/></p>
+            <p><Comment key={i} {...comment}/></p>
             )}
         </div>  
     )  

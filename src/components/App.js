@@ -6,11 +6,11 @@ import '../App.css'
 
 
 
-const App = ({ posts })=> {
+const App = ()=> {
   return(
       <Fragment>
         <Header/>
-        <PostList posts={posts}/>
+        <PostList />
       </Fragment>
   )
 }
