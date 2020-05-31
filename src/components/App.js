@@ -1,17 +1,20 @@
 import React,{Fragment} from 'react';
-import {Provider} from 'react-redux'
 import PostList from './posts/PostList'
 import Header from './layout/Header';
+import store from '../store'
+import {Provider} from 'react-redux'
 import '../App.css'
 
 
 
 const App = ()=> {
   return(
+    <Provider store={store}>
       <Fragment>
-        <Header/>
-        <PostList />
+       <Header/>
+       <PostList />
       </Fragment>
+    </Provider>
   )
 }
 

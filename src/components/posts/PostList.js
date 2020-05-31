@@ -1,26 +1,30 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import {connect} from 'react-redux'
 import Post from './Post'
+import {getPost} from '../../actions/posts'
 
-const PostList = ()=>{
 
-const [posts, SetPosts] = useState([])
+const mapStateToProps = (state) => ({
+    posts: state.posts.posts
+  });
 
-useEffect(()=>{
+const PostList = (props)=>{
 
- fetch('http://127.0.0.1:8000/api/v1/post/')
-.then(res => res.json())
-.then(data => SetPosts(data))
-.catch(error => console.log(error));
-
-},[])
+    useEffect(
+        props.getPost()
+    ,[])
 
     return(
         <div className="postlist">
-            {posts.map((post)=>
-            <p><Post key={post.id}{...post}/></p>
+            {props.posts.map(post=>
+            //<p><Post key={post.id}{...post}/></p>
+            <p key={post.id}>{post.author}</p>
             )}
         </div>
     )
 }
 
-export default PostList
+
+  
+export default connect(mapStateToProps,{getPost})(PostList);
+  
